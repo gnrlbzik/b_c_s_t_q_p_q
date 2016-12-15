@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>final fibonacci number</title>
+        <meta name="desciption" content="Write a function that produces the final fibonacci number given a number">
+        <style media="screen">
+            body {
+                margin: 1em 25%;
+            }
+            form {
+                text-align: center;
+                background-color: #f2f2f2;
+                padding: 1em;
+            }
+            form input[type="number"] {
+                width: 14em;
+            }
+            .numbers-list {
+                display: none;
+            }
+            .numbers-list.has-content {
+                display: inline-block;
+            }
+        </style>
+
+        <script type="text/javascript">
+            // element references assigned on DOMContentLoaded
+            var elNumbersBlock, elNumbersList;
+
+            function formatHistoryRowCopy (timeStamp, topNumber, fibonacciSequence) {
+                return timeStamp + ' ' + topNumber + ' ' + fibonacciSequence;
+            }
+
+            function generateFibonacciSequence () {
+                // Memoization
+            }
+
+            function calculateFinalFibonacciNumber (topNumber) {
+                var timeStamp = Date.now();
+                var existingListHtml;
+                var fibonacciSequence = generateFibonacciSequence(topNumber);
+
+                if (elNumbersList) {
+                    existingListHtml = elNumbersList.innerHTML;
+                    elNumbersList.innerHTML = '<li>' + formatHistoryRowCopy (timeStamp, topNumber, fibonacciSequence) + '</li>' + existingListHtml;
+                }
+
+                if (elNumbersList && elNumbersList.innerHTML.length && elNumbersBlock.className.indexOf('has-content') === -1) {
+                    elNumbersBlock.className = 'has-content';
+                }
+
+            }
+
+            function submitFinalFibonacciNumberForm (e) {
+                e.preventDefault();
+                var topNumber = document.getElementById('topNumber').value;
+                calculateFinalFibonacciNumber(topNumber);
+                return false;
+            }
+
+            document.addEventListener('DOMContentLoaded', function(){
+                elNumbersBlock = document.getElementById('finalFibonacciNumbersBlock');
+                elNumbersList = document.getElementById('finalFibonacciNumbersList');
+
+                document
+                    .getElementById('finalFibonacciNumberForm')
+                    .addEventListener('submit', submitFinalFibonacciNumberForm);
+            }, false);
+        </script>
+    </head>
+    <body>
+
+        <h1>Final Fibonacci Number</h1>
+        <p>Write a function that produces final fibonacci number from a given a number</p>
+        <form id="finalFibonacciNumberForm" action="#">
+            <label for="topNumber">Given Number:</label>
+            <input type="number" id="topNumber" name="topNumber" required="required" placeholder="type your number here" min="1">
+            <input type="submit" value="Clik Me To Calculate Final Fibonacci Number">
+        </form>
+        <div id="finalFibonacciNumbersBlock" class="numbers-list">
+            <h2>Your "Final Fibonacci Number" history:</h2>
+            <ul id="finalFibonacciNumbersList"></ul>
+        </div>
+        <h2>Code</h2>
+        <code id="codePlaceHolder">Code</code>
+
+    </body>
+</html>
