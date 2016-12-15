@@ -16,6 +16,6 @@
 
 * for numbers 1 to 100, write a function that prints a word if number is divisible by 3, another word if number is divisible by 5 and another word if number is divisible by 3 and 5.
 
-* "[final fibonacci number](./ffn.html)" - Write a function that produces the final fibonacci number given a number
+* "[final fibonacci number](./final-fibonacci-number.html)" - Write a function that produces the final fibonacci number given a number
 
 * Write a function that gives lists of anagrams, given a list of strings
