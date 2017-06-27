@@ -1,4 +1,5 @@
-# collection of quizzes / questions
+# collection of code related
+books, code, samples, tests, quizzes, puzzles, questions
 
 * Merging two sorted arrays
 
