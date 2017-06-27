@@ -1,6 +1,8 @@
 # collection of code related
 books, code, samples, tests, quizzes, puzzles, questions
 
+* FizzBuzz Test ["[js](./fizz-buzz-test/fizz-buzz-test.js)"]
+
 * Merging two sorted arrays
 
 * design array list, and string count
