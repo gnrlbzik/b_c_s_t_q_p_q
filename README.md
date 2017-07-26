@@ -7,6 +7,9 @@ books, code, samples, tests, quizzes, puzzles, questions
 
 * **WIP**: **Final Fibonacci Number** ["[html/js](./final-fibonacci-number/final-fibonacci-number.html)"] - Write a function that produces the final fibonacci number given a number
 
+* **maximum sum subarray problem** ["[js](./maximum-sum-subarray-problem/maximum-sum-subarray-problem.js)"]
+   * The maximum sum subarray problem consists in finding the maximum sum of a contiguous subsequence in an array or list of integers
+
 * Merging two sorted arrays
 
 * design array list, and string count
