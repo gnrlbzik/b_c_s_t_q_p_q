@@ -31,7 +31,7 @@
                 const rectangleElements = [];
                 Array.prototype.push.apply(rectangleElements, document.getElementsByClassName('rectangle'));
                 rectangleElements.forEach(function (element) {
-                    element.onclick = function handleRectangleElementsOnClick (e) {
+                    element.onclick = function handleRectangleElementOnClick (e) {
                         e.stopPropagation();
                         alert(e.target.querySelector('span').innerText);
                     };
