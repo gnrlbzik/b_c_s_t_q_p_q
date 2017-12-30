@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Three rectangles</title>
+        <style>
+            .rectangle {
+                background-color: #ee8236;
+                border: 1px solid rgba(0,0,0,0.4);
+                margin: 3em;
+                text-align: center;
+                box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            }
+
+            .rectangle:first-child {
+                background-color: #b9ceef;
+            }
+
+            .rectangle.first,
+            .rectangle.second {
+                padding-top: 0.5em;
+            }
+
+            .rectangle.third {
+                padding: 3em;
+            }
+        </style>
+
+        <script>
+            window.onload = function handleWindowOnLoad () {
+                const rectangleElements = [];
+                Array.prototype.push.apply(rectangleElements, document.getElementsByClassName('rectangle'));
+                rectangleElements.forEach(function (element) {
+                    element.onclick = function handleRectangleElementsOnClick (e) {
+                        e.stopPropagation();
+                        alert(e.target.querySelector('span').innerText);
+                    };
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <div class="rectangle first">
+            <span>Div 1</span>
+            <div class="rectangle second">
+                <span>Div 2</span>
+                <div class="rectangle third">
+                    <span>Div 3</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

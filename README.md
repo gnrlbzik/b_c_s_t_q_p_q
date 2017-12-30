@@ -26,6 +26,6 @@ books, code, samples, tests, quizzes, puzzles, questions
 
 * Write a function that gives lists of anagrams, given a list of strings
 
-* **Three Rectangles** ["[folder](./three-rectangles)"]
+* **Three Rectangles** ["[html/js](./three-rectangles)"]
 
-* **Calendar React App** ["[folder](./calendar-react-app)"]
+* **Calendar React App** ["[Sinatra API / ReactJS UI](./calendar-react-app)"]
