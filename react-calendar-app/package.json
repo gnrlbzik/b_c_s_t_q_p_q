@@ -1,0 +1,22 @@
+{
+  "name": "react-calendar-app",
+  "version": "0.0.1",
+  "description": "react calendar app",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "parcel ./js-app/index.html",
+    "watch": "parcel watch index.html"
+  },
+  "dependencies": {
+    "node-sass": "^4.7.2",
+    "parcel-bundler": "^1.4.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1"
+  }
+}

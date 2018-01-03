@@ -26,4 +26,4 @@ books, code, samples, tests, quizzes, puzzles, questions
 
 * Write a function that gives lists of anagrams, given a list of strings
 
-* **Calendar React App** ["[folder](./calendar-react-app)"]
+* **Calendar React App** ["[folder](./react-calendar-app)"]
