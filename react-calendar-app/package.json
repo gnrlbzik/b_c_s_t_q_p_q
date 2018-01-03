@@ -2,12 +2,11 @@
   "name": "react-calendar-app",
   "version": "0.0.1",
   "description": "react calendar app",
-  "main": "index.js",
+  "main": "./js-app/index.js",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "parcel ./js-app/index.html",
-    "watch": "parcel watch index.html"
+    "start": "parcel ./js-app/index.html"
   },
   "dependencies": {
     "node-sass": "^4.7.2",
