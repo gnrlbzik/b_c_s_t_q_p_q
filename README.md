@@ -25,3 +25,5 @@ books, code, samples, tests, quizzes, puzzles, questions
 * Story Problems (use-cases/data flows)/ Nest Themorstat Problem
 
 * Write a function that gives lists of anagrams, given a list of strings
+
+* **Calendar React App** ["[folder](./calendar-react-app)"]
