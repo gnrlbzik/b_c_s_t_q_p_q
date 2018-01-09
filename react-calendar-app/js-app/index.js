@@ -2,15 +2,12 @@ import './index.scss';
 import React from 'react';
 import { render } from 'react-dom';
 
-class AppRoot extends React.Component {
-    constructor() {
-        super();
-    }
+// scenes
+import YourAppointmentsListScene from './scenes/your-appointments-list-scene'
 
-    render() {
-        return (<div>Main App Component</div>);
-    }
-}
-export default App;
+// root component
+const AppRoot = () => (
+    <YourAppointmentsListScene />
+);
 
 render(<AppRoot />, document.getElementById('app-root'));
