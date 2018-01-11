@@ -41,23 +41,3 @@ export default class AppointmentDetailsView extends React.Component {
         );
     }
 }
-
-
-//     ({
-//     handleSaveAppointmentDataButtonClick,
-//     handleCancelButtonClick
-// }) => {
-//     return (
-//         <div id="appointment-details">
-//             <h2>New Apppointment</h2>
-//             <label htmlFor="appointment-title">Title:
-//                 <input id="appointment-title" type="text" ref="appointmentTitleValue" />
-//             </label>
-//             <label htmlFor="appointment-date">Date:
-//                 <input id="appointment-date" type="date" ref="appointmentDateValue" />
-//             </label>
-//             <button onClick={handleSaveAppointmentDataButtonClick}>Save Appointment</button>
-//             <button onClick={handleCancelButtonClick}>Cancel</button>
-//         </div>
-//     );
-// };
