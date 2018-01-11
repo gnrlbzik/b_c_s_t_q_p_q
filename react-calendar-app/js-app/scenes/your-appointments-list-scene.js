@@ -103,10 +103,11 @@ export default class YourAppointmentsListScene extends React.Component {
             validity.messages.push('Can not create two different appointment on same date');
         }
 
-        const appDate = new Date(appointmentData.date);
+        let appDate = new Date(appointmentData.date);
         const today = new Date();
 
-        if (appDate.getMonth() === today.getMonth() && appDate.getDate() > today.getDate() || appDate.getMonth() > today.getMonth()) {
+        // TODO: figure out why appDate.getDate returns yesterday's day.
+        if (appDate.getMonth() === today.getMonth() && appDate.getDate()+1 < today.getDate() || appDate.getMonth() < today.getMonth()) {
             validity.isValid = false;
             validity.messages.push('Date can not be before today');
         }
