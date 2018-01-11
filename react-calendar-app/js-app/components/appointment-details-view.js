@@ -14,6 +14,11 @@ export default class AppointmentDetailsView extends React.Component {
         });
     }
 
+    getButtonTitle() {
+        const { appointmentId, title, date } = this.props.appointmentData;
+        return (appointmentId && (title || date)) ? 'Update' : 'Create';
+    }
+
     render() {
         const {
             appointmentData,
@@ -29,7 +34,7 @@ export default class AppointmentDetailsView extends React.Component {
                     <input id="appointment-date" type="date" ref="appointmentDateValue" defaultValue={appointmentData.date} />
                 </label>
 
-                <button onClick={this.handleOnClickButton}>Save Appointment</button>
+                <button onClick={this.handleOnClickButton}>{this.getButtonTitle()}</button>
 
                 <button onClick={handleCancelButtonClick}>Cancel</button>
             </div>
