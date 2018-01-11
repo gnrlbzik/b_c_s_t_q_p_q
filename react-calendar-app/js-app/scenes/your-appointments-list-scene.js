@@ -42,6 +42,11 @@ export default class YourAppointmentsListScene extends React.Component {
     }
 
     handleSaveAppointmentDataButtonClick(appointmentData) {
+        const isAppointmentValid = this.validateAppointmentData(appointmentData);
+        if (!isAppointmentValid.isValid) {
+            alert(isAppointmentValid.messages.join('\n'));
+            return;
+        }
         appointmentsStore.dispatch(setAppointmentDetailsId(null));
         appointmentsStore.dispatch(updateAppointment(appointmentData));
     }
@@ -51,10 +56,7 @@ export default class YourAppointmentsListScene extends React.Component {
     }
 
     handleEditAppointmentButtonClick(appointmentId) {
-
         appointmentsStore.dispatch(setAppointmentDetailsId(appointmentId));
-
-        // appointmentsStore.dispatch(updateAppointment(appointmentData));
     }
 
     handleDeleteAppointmentButtonClick(appointmentId) {
@@ -77,6 +79,31 @@ export default class YourAppointmentsListScene extends React.Component {
 
     getAppointmentDataById(appointmentId) {
         return _find(this.state.appointments, { appointmentId }) || { appointmentId };
+    }
+
+    validateAppointmentData(appointmentData) {
+        const validity = {
+            isValid: true,
+            messages: []
+        };
+        const appointmentWithMatchingDate = _find(this.state.appointments, { 'date':  appointmentData.date});
+
+        if (typeof appointmentData.title === undefined || appointmentData.title.length === 0) {
+            validity.isValid = false;
+            validity.messages.push('Please provide title for your appointment');
+        }
+
+        if (typeof appointmentData.date === undefined || appointmentData.date.length === 0) {
+            validity.isValid = false;
+            validity.messages.push('Please provide date for your appointment');
+        }
+
+        if (appointmentWithMatchingDate && (appointmentWithMatchingDate.appointmentId !== appointmentData.appointmentId)) {
+            validity.isValid = false;
+            validity.messages.push('Can not create two different appointment on same date');
+        }
+
+        return validity;
     }
 
     render() {
