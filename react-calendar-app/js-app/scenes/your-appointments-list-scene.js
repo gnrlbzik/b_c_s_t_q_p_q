@@ -1,12 +1,13 @@
 import React from 'react';
 import AppointmentListItem from './../components/appointments-list-item';
 import AppointmentDetailsView from './../components/appointment-details-view';
+import { find as _find } from 'lodash';
 
 // actions
 import {
-    createAppointment,
     deleteAppointment,
-    updateAppointment
+    updateAppointment,
+    setAppointmentDetailsId
 } from './../state/appointments-actions';
 
 // stores
@@ -19,7 +20,7 @@ export default class YourAppointmentsListScene extends React.Component {
         this.handleCreateAppointmentButtonClick = this.handleCreateAppointmentButtonClick.bind(this);
         this.handleSaveAppointmentDataButtonClick = this.handleSaveAppointmentDataButtonClick.bind(this);
         this.handleAppointmentDetailsViewCancelButtonClick = this.handleAppointmentDetailsViewCancelButtonClick.bind(this);
-        this.handleUpdateAppointmentButtonClick = this.handleUpdateAppointmentButtonClick.bind(this);
+        this.handleEditAppointmentButtonClick = this.handleEditAppointmentButtonClick.bind(this);
         this.state = appointmentsStore.getState();
     }
 
@@ -37,28 +38,23 @@ export default class YourAppointmentsListScene extends React.Component {
     }
 
     handleCreateAppointmentButtonClick() {
-        this.setState({
-            showAppointmentDetailsForm: true
-        });
+        appointmentsStore.dispatch(setAppointmentDetailsId(Date.now()));
     }
 
     handleSaveAppointmentDataButtonClick(appointmentData) {
-        appointmentsStore.dispatch(createAppointment(appointmentData));
-        this.setState({
-            showAppointmentDetailsForm: false
-        });
+        appointmentsStore.dispatch(setAppointmentDetailsId(null));
+        appointmentsStore.dispatch(updateAppointment(appointmentData));
     }
 
     handleAppointmentDetailsViewCancelButtonClick() {
-        this.setState({
-            showAppointmentDetailsForm: false
-        });
+        appointmentsStore.dispatch(setAppointmentDetailsId(null));
     }
 
-    handleUpdateAppointmentButtonClick(appointmentId) {
-        this.setState({
-            showAppointmentDetailsForm: true
-        });
+    handleEditAppointmentButtonClick(appointmentId) {
+
+        appointmentsStore.dispatch(setAppointmentDetailsId(appointmentId));
+
+        // appointmentsStore.dispatch(updateAppointment(appointmentData));
     }
 
     handleDeleteAppointmentButtonClick(appointmentId) {
@@ -71,12 +67,16 @@ export default class YourAppointmentsListScene extends React.Component {
                 <AppointmentListItem
                     key={index}
                     appointmentData={appointmentData}
-                    handleUpdateAppointmentButtonClick={this.handleUpdateAppointmentButtonClick}
+                    handleEditAppointmentButtonClick={this.handleEditAppointmentButtonClick}
                     handleDeleteAppointmentButtonClick={this.handleDeleteAppointmentButtonClick}
-                    shouldDisableActionButtons={this.state.showAppointmentDetailsForm}
+                    shouldDisableActionButtons={!!this.state.appointmentDetails.appointmentId}
                 />
             );
         });
+    }
+
+    getAppointmentDataById(appointmentId) {
+        return _find(this.state.appointments, { appointmentId }) || { appointmentId };
     }
 
     render() {
@@ -91,16 +91,17 @@ export default class YourAppointmentsListScene extends React.Component {
                     </div>
                 ) : null}
 
-                {(!this.state.showAppointmentDetailsForm && this.state.appointments.length > 0) ? (
+                {(!this.state.appointmentDetails.appointmentId && this.state.appointments.length > 0) ? (
                     <button onClick={this.handleCreateAppointmentButtonClick}>Add another appointment</button>
                 ) : null}
 
-                {(!this.state.showAppointmentDetailsForm && this.state.appointments.length === 0) ? (
+                {(!this.state.appointmentDetails.appointmentId && this.state.appointments.length === 0) ? (
                     <div>You have no saved appointments. You should <button onClick={this.handleCreateAppointmentButtonClick}>create one</button>!</div>
                 ) : null}
 
-                {(this.state.showAppointmentDetailsForm) ? (
+                {(this.state.appointmentDetails.appointmentId) ? (
                     <AppointmentDetailsView
+                        appointmentData={this.getAppointmentDataById(this.state.appointmentDetails.appointmentId)}
                         handleSaveAppointmentDataButtonClick={this.handleSaveAppointmentDataButtonClick}
                         handleCancelButtonClick={this.handleAppointmentDetailsViewCancelButtonClick} />
                 ) : (

@@ -2,14 +2,14 @@ import React from 'react';
 
 const AppointmentListItem = ({
     appointmentData,
-    handleUpdateAppointmentButtonClick,
+    handleEditAppointmentButtonClick,
     handleDeleteAppointmentButtonClick,
     shouldDisableActionButtons
 }) => (
     <li>
-        {appointmentData.dateTime} - {appointmentData.name}
-        <button disabled={shouldDisableActionButtons} onClick={handleUpdateAppointmentButtonClick.bind(this, appointmentData.id)}>Edit</button>
-        <button disabled={shouldDisableActionButtons} onClick={handleDeleteAppointmentButtonClick.bind(this, appointmentData.id)}>Delete</button>
+        {appointmentData.appointmentId} - {appointmentData.date} - {appointmentData.title}
+        <button disabled={shouldDisableActionButtons} onClick={handleEditAppointmentButtonClick.bind(this, appointmentData.appointmentId)}>Edit</button>
+        <button disabled={shouldDisableActionButtons} onClick={handleDeleteAppointmentButtonClick.bind(this, appointmentData.appointmentId)}>Delete</button>
     </li>
 );
 

@@ -1,17 +1,9 @@
 // actions constants
-export const CREATE_APPOINTMENT = 'CREATE_APPOINTMENT';
 export const DELETE_APPOINTMENT = 'DELETE_APPOINTMENT';
 export const UPDATE_APPOINTMENT = 'UPDATE_APPOINTMENT';
-export const OPEN_APPOINTMENT_DETAILES = 'OPEN_APPOINTMENT_DETAILES';
+export const SET_APPOINTMENT_DETAILS_ID = 'SET_APPOINTMENT_DETAILS_ID';
 
 // actions creators
-export function createAppointment (appointmentData) {
-    return {
-        type: CREATE_APPOINTMENT,
-        appointmentData
-    };
-}
-
 export function deleteAppointment (appointmentId) {
     return {
         type: DELETE_APPOINTMENT,
@@ -26,9 +18,9 @@ export function updateAppointment (appointmentData) {
     };
 }
 
-export function retrieveAppointmentDetails (appointmentData) {
+export function setAppointmentDetailsId (appointmentId) {
     return {
-        type: OPEN_APPOINTMENT_DETAILES,
-        appointmentData
+        type: SET_APPOINTMENT_DETAILS_ID,
+        appointmentId
     };
 }

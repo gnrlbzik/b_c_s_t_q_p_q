@@ -8,24 +8,25 @@ export default class AppointmentDetailsView extends React.Component {
 
     handleOnClickButton() {
         this.props.handleSaveAppointmentDataButtonClick({
-            name: this.refs.appointmentTitleValue.value,
-            dateTime: this.refs.appointmentDateValue.value
+            title: this.refs.appointmentTitleValue.value,
+            date: this.refs.appointmentDateValue.value,
+            appointmentId: this.props.appointmentData.appointmentId
         });
     }
 
     render() {
         const {
-            handleSaveAppointmentDataButtonClick,
+            appointmentData,
             handleCancelButtonClick
         } = this.props;
         return (
             <div id="appointment-details">
                 <h2>New Apppointment</h2>
                 <label htmlFor="appointment-title">Title:
-                    <input id="appointment-title" type="text" ref="appointmentTitleValue" />
+                    <input id="appointment-title" type="text" ref="appointmentTitleValue" defaultValue={appointmentData.title} />
                 </label>
                 <label htmlFor="appointment-date">Date:
-                    <input id="appointment-date" type="date" ref="appointmentDateValue" />
+                    <input id="appointment-date" type="date" ref="appointmentDateValue" defaultValue={appointmentData.date} />
                 </label>
 
                 <button onClick={this.handleOnClickButton}>Save Appointment</button>
