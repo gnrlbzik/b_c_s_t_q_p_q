@@ -1,0 +1,23 @@
+{
+  "name": "resume-submission-exercise",
+  "version": "0.0.1",
+  "description": "resume submission exercise",
+  "main": "index.js",
+  "author": "Alesei",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "babel-node -- ./index.js"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "koa": "^2.4.1",
+    "koa-router": "^7.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.7"
+  }
+}
