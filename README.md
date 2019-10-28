@@ -10,6 +10,13 @@ books, code, samples, tests, quizzes, puzzles, questions
 * **WIP**: **maximum sum subarray problem** ["[js](./maximum-sum-subarray-problem/maximum-sum-subarray-problem.js)"]
    * The maximum sum subarray problem consists in finding the maximum sum of a contiguous subsequence in an array or list of integers
 
+* **Calendar React App** ["[folder](./react-calendar-app)"]
+
+* **Three Rectangles** ["[folder](./three-rectangles)"]
+
+
+## Add following
+
 * Merging two sorted arrays
 
 * design array list, and string count
@@ -25,7 +32,3 @@ books, code, samples, tests, quizzes, puzzles, questions
 * Story Problems (use-cases/data flows)/ Nest Themorstat Problem
 
 * Write a function that gives lists of anagrams, given a list of strings
-
-* **Calendar React App** ["[folder](./react-calendar-app)"]
-
-* **Three Rectangles** ["[folder](./three-rectangles)"]
