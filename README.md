@@ -14,6 +14,7 @@ books, code, samples, tests, quizzes, puzzles, questions
 
 * **Three Rectangles** ["[folder](./three-rectangles)"]
 
+* **De-Dupe Array** ["[JS Readme](./dedupe-array/dedupe-array.js.md)" "[JS Solutions](./dedupe-array/dedupe-array.js)" "[TODO: TS Solutions](./dedupe-array/dedupe-array.ts)"]
 
 ## Add following
 
