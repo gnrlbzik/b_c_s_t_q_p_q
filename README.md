@@ -14,9 +14,9 @@ books, code, samples, tests, quizzes, puzzles, questions
 
 * **Three Rectangles** ["[folder](./three-rectangles)"]
 
-* **De-Dupe Array** ["[JS Readme](./dedupe-array/dedupe-array.js.md)" "[JS Solutions](./dedupe-array/dedupe-array.js)" "[TODO: TS Solutions](./dedupe-array/dedupe-array.ts)"]
+* **De-Dupe Array** ["[JS Readme](./dedupe-array/dedupe-array.js.md)" "[JS Solutions](./dedupe-array/dedupe-array.js)" "[TODO: TS Solutions](./dedupe-array/dedupe-array.ts)" "[codesandbox template](https://codesandbox.io/s/de-dupe-question-mcgn5)"]
 
-* **WIP**: **Simple ReactJS Todo List** ["[JS Readme](./react-simple-todo-list/react-simple-todo-list.js.md)" "[JS Solutions](./react-simple-todo-list/react-simple-todo-list.js)"  "[codesandbox](https://codesandbox.io/s/simple-react-component-interview-test-6cv0z)"]
+* **WIP**: **Simple ReactJS Todo List** ["[JS Readme](./react-simple-todo-list/react-simple-todo-list.js.md)" "[JS Solutions](./react-simple-todo-list/react-simple-todo-list.js)" "[codesandbox template](https://codesandbox.io/s/simple-react-component-interview-test-6cv0z)"]
 
 ## Add following
 
