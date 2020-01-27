@@ -16,6 +16,8 @@ books, code, samples, tests, quizzes, puzzles, questions
 
 * **De-Dupe Array** ["[JS Readme](./dedupe-array/dedupe-array.js.md)" "[JS Solutions](./dedupe-array/dedupe-array.js)" "[TODO: TS Solutions](./dedupe-array/dedupe-array.ts)"]
 
+* **WIP**: **Simple ReactJS Todo List** [ "[codesandbox](https://codesandbox.io/s/simple-react-component-interview-test-6cv0z)"]
+
 ## Add following
 
 * Merging two sorted arrays
