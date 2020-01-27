@@ -1,5 +1,9 @@
 # JavaScript De-Dupe Array
 
+## Codesandbox Template
+
+- https://codesandbox.io/s/de-dupe-question-mcgn5
+
 ## Problem
 
 Remove duplicates from array
