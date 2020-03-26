@@ -2,7 +2,7 @@
 
 ## Codesandbox Template
 
-- https://codesandbox.io/s/de-dupe-question-mcgn5
+- https://codesandbox.io/s/de-dupe-interview-test-mcgn5
 
 ## Problem
 
