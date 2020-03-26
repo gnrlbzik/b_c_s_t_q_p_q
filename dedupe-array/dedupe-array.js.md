@@ -2,7 +2,8 @@
 
 ## Codesandbox Template
 
-- https://codesandbox.io/s/de-dupe-interview-test-mcgn5
+- VANILA: https://codesandbox.io/s/de-dupe-interview-test-vanila-vq3pe
+- TS: https://codesandbox.io/s/de-dupe-interview-test-ts-mcgn5
 
 ## Problem
 
